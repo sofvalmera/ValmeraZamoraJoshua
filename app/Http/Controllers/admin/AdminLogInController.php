@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminLogInController extends Controller
 {
+    //number 1 ni
     public function index(){
         return view('admin.login');
     }

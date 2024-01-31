@@ -103,25 +103,25 @@
                             <div class="form-check mb-2">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
-                                    $0-$100
+                                &#8369;0-&#8369;100
                                 </label>
                             </div>
                             <div class="form-check mb-2">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
                                 <label class="form-check-label" for="flexCheckChecked">
-                                    $100-$200
+                                &#8369;100-&#8369;200
                                 </label>
                             </div>                 
                             <div class="form-check mb-2">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
                                 <label class="form-check-label" for="flexCheckChecked">
-                                    $200-$500
+                                &#8369;200-&#8369;500
                                 </label>
                             </div> 
                             <div class="form-check mb-2">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
                                 <label class="form-check-label" for="flexCheckChecked">
-                                    $500+
+                                &#8369;500+
                                 </label>
                             </div>                 
                         </div>

@@ -4,7 +4,7 @@
         <div class="container">
             <div class="light-font">
                 <ol class="breadcrumb primary-color mb-0">
-                    <li class="breadcrumb-item"><a class="white-text" href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a class="white-text" href="{{route('front.home')}}">Home</a></li>
                     <li class="breadcrumb-item">Register</li>
                 </ol>
             </div>
@@ -54,45 +54,104 @@
 
 $("#registerf").submit(function(event){
 		event.preventDefault();
+		// var element =$(this);
 
-        // var formArray = $(this).serializeArray();
 
-        // $("button[type='submit']").prop('disabled',true);
+		$("button[type=submit]").prop('disable',true);
 		$.ajax({
-			url: '{{route("account.registernatokmol")}}',
-			type: 'get',
-			data:$(this),serializeArray(),
+			url: '{{ route("account.processRegister") }}',
+			type: 'post',
+			data: $(this).serializeArray(),
 			dataType:'json',
 			success:function(response){
-                var errors = response['errors'];
+				// $("button[type=submit]").prop('disable',false);
 
-
-                if(errors.name){
-					$("#name").siblings('p').addClass('invalid-feedback').html(errors.name);
-					$("#name").addClass('is-invalid');
-				} else{
-					$("#name").siblings('p').removeClass('invalid-feedback').html("");
-					$("#name").removeClass('is-invalid');
-			
-				}
-                if(errors.name){
-					$("#name").siblings('p').addClass('invalid-feedback').html(errors.name);
-					$("#name").addClass('is-invalid');
-				} else{
-					$("#name").siblings('p').removeClass('invalid-feedback').html("");
-					$("#name").removeClass('is-invalid');
-			
-				}
-                if(errors.name){
-					$("#name").siblings('p').addClass('invalid-feedback').html(errors.name);
-					$("#name").addClass('is-invalid');
-				} else{
-					$("#name").siblings('p').removeClass('invalid-feedback').html("");
-					$("#name").removeClass('is-invalid');
-			
-				}
-                
 				
+
+				// 	window.location.href="{{route('admin.showChangePasswordForm')}}";
+					// $("#name").removeClass('is-invalid')
+					// .siblings('p')
+					// .removeClass('invalid-feedback')
+					// .html("");
+
+					// $("#slug").removeClass('is-invalid').siblings('p').removeClass('invalid-feedback').html("");
+				// }
+                // else {
+                        // if(response['notFound'] == true){
+                        //     window.location.href="{{route('categories.index')}}";
+
+                        // }
+
+					var errors = response.errors;
+                            if(response["status"] == false){
+                    if(errors.name){
+                        $("#name").siblings("p").addClass('invalid-feedback').html(errors.name);
+                        $("#name").addClass('is-invalid-feedback');
+                    }else {
+                        $("#name").siblings("p").removeClass('invalid-feedback').html('');
+                        $("#name").removeClass('is-invalid');
+                    }
+                    if(errors.email){
+                        $("#email").siblings("p").addClass('invalid-feedback').html(errors.email);
+                        $("#email").addClass('is-invalid-feedback');
+                    }else {
+                        $("#email").siblings("p").removeClass('invalid-feedback').html('');
+                        $("#email").removeClass('is-invalid');
+                    }
+                    if(errors.password){
+                        $("#password").siblings("p").addClass('invalid-feedback').html(errors.password);
+                        $("#password").addClass('is-invalid-feedback');
+                    }else {
+                        $("#password").siblings("p").removeClass('invalid-feedback').html('');
+                        $("#password").removeClass('is-invalid');
+                    }
+                    
+
+
+				// if(errors['old_password']){
+				// 	$("#old_password").addClass('is-invalid')
+				// 	.siblings('p')
+				// 	.addClass('invalid-feedback').html(errors['old_password']);
+				// } else{
+				// 	$("#old_password").removeClass('is-invalid')
+				// 	.siblings('p')
+				// 	.removeClass('invalid-feedback')
+				// 	.html("");
+				// }
+				// if(errors['new_password']){
+				// 	$("#new_password").addClass('is-invalid')
+				// 	.siblings('p')
+				// 	.addClass('invalid-feedback')
+				// 	.html(errors['new_password']);
+				// }else{
+				// 	$("#new_password").removeClass('is-invalid')
+				// 	.siblings('p')
+				// 	.removeClass('invalid-feedback')
+				// 	.html("");
+				// }
+				// if(errors['confirm_password']){
+				// 	$("#confirm_password").addClass('is-invalid')
+				// 	.siblings('p')
+				// 	.addClass('invalid-feedback')
+				// 	.html(errors['confirm_password']);
+				// }else{
+				// 	$("#confirm_password").removeClass('is-invalid')
+				// 	.siblings('p')
+				// 	.removeClass('invalid-feedback')
+				// 	.html("");
+				// }
+
+
+				}else{
+                    $("#name").siblings("p").removeClass('invalid-feedback').html('');
+                    $("#name").removeClass('is-invalid');
+
+                    $("#email").siblings("p").addClass('invalid-feedback').html(errors.email);
+                        $("#email").addClass('is-invalid-feedback');
+                        
+                        $("#password").siblings("p").removeClass('invalid-feedback').html('');
+                        $("#password").removeClass('is-invalid');
+                }
 				
 
 			}, error: function(jqXHR, exception){

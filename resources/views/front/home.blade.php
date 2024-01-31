@@ -9,20 +9,23 @@
                     <!-- <img src="images/carousel-1.jpg" class="d-block w-100" alt=""> -->
 
                     <picture>
-                        <source media="(max-width: 799px)" srcset="{{asset('front-assets/images/front1.jpg')}}" />
-                        <source media="(min-width: 800px)" srcset="{{asset('front-assets/images/front1.jpg')}}" />
-                        <img src="{{asset('front-assets/images/front1.jpg')}}" alt="" />
+                        <source media="(max-width: 799px)" srcset="{{asset('front-assets/images/desk.jfif')}}" />
+                        <source media="(min-width: 800px)" srcset="{{asset('front-assets/images/desk.jfif')}}" />
+                        <img src="{{asset('front-assets/images/desk.jfif')}}" alt="" />
                     </picture>
 
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3">
-                            <h1 class="display-4 text-white mb-3">Electronics</h1>
+                            <h1 class="display-4 text-white mb-3">Welcome To Our Website</h1>
                             <p class="mx-md-5 px-5">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
+                            <!-- <p class="mx-md-5 px-5">palit namo!</p> -->
                             <a class="btn btn-outline-light py-2 px-4 mt-3" href="{{route('front.shop')}}">Shop Now</a>
                         </div>
                     </div>
                 </div>
-                <!-- <div class="carousel-item">
+               
+              
+                 <div class="carousel-item">
                     
                     <picture>
                         <source media="(max-width: 799px)" srcset="{{asset('front-assets/images/front3.jfif')}}" />
@@ -32,13 +35,13 @@
 
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3">
-                            <h1 class="display-4 text-white mb-3">Womens Fashion</h1>
+                            <h1 class="display-4 text-white mb-3">Shop Now with 10% Discount</h1>
                             <p class="mx-md-5 px-5">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
                             <a class="btn btn-outline-light py-2 px-4 mt-3" href="{{route('front.shop')}}">Shop Now</a>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item">
+               <!-- <div class="carousel-item">
                  
 
                     <picture>
@@ -112,7 +115,7 @@
                     <div class="cat-card">
                         <div class="left">
                             @if ($category->image != "")
-                            <img src="{{asset('uploads/category/thumb'.$category->image)}}" alt="" class="img-fluid">
+                            <img src="{{asset('uploads/category/thumb/'.$category->image)}}" alt="" class="img-fluid">
                             @endif
                             <!-- <img src="{{asset('front-assets/images/cat-2.jpg')}}" alt="" class="img-fluid"> -->
                         </div>

@@ -45,7 +45,7 @@ Route::get('/shop/{categorySlug?}/{subCategorySlug?}',[ShopController::class,'in
 
 //sa user ni 
 Route::get('/register',[AuthController::class,'register'])->name('account.register');
-Route::post('/process-register',[AuthController::class,'processDioskoLordtaasapamani'])->name('account.registernatokmol');
+Route::post('/process-register',[AuthController::class,'processDioskoLordtaasapamani'])->name('account.processRegister');
 
 
 Route::group(['prefix' => 'admin'],function(){

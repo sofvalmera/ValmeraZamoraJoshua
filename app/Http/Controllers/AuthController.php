@@ -30,7 +30,7 @@ class AuthController extends Controller
             $brand->save();
 
 
-            $request->session()->flash('success','Brand Added Successfully');
+            $request->session()->flash('success','You have been Registered Successfully');
 
             return response()->json([
                 'status' => true,
