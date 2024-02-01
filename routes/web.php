@@ -10,6 +10,7 @@ use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\ProductSubCategoryController;
 use App\Http\Controllers\admin\TempImageController;
 use App\Http\Controllers\admin\ProductImageController;
+use App\Http\Controllers\api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ShopController;
@@ -34,7 +35,7 @@ use App\Http\Controllers\AuthController;
 
 
 
-
+Route::get('/javascript',[api::class,'index'])->name('js_integration');
  Route::get('/',[FrontController::class,'index'])->name('front.home');
 //  Route::get('/shop',[ShopController::class,'index'])->name('front.shop');
 Route::get('/shop/{categorySlug?}/{subCategorySlug?}',[ShopController::class,'index'])->name('front.shop');

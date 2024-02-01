@@ -9,8 +9,8 @@
                     <!-- <img src="images/carousel-1.jpg" class="d-block w-100" alt=""> -->
 
                     <picture>
-                        <source media="(max-width: 799px)" srcset="{{asset('front-assets/images/desk.jfif')}}" />
-                        <source media="(min-width: 800px)" srcset="{{asset('front-assets/images/desk.jfif')}}" />
+                        <source media="(max-width: 799px)" srcset="{{asset('front-assets/images/sof1.jpg')}}" />
+                        <source media="(min-width: 800px)" srcset="{{asset('front-assets/images/sof1.jpg')}}" />
                         <img src="{{asset('front-assets/images/desk.jfif')}}" alt="" />
                     </picture>
 

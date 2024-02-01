@@ -171,10 +171,10 @@
             <div class="col-md-4">
                 <div class="footer-card">
                     <h3>Get In Touch</h3>
-                    <p>Laban lang,Unsa man mamagol na lamng ka?<br>
-                Team Rocket Gihapon <br>
-                ITpa.com <br>
-                  0912 ikaw nay bahala sa pito</p>
+                    <p>Hilongos,Leyte<br>
+               Philippines <br>
+                zamoravalmera@mlgcl.edu.ph <br>
+                 09123475747</p>
                 </div>
             </div>
 
