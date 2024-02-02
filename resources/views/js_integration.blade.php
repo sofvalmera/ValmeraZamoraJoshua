@@ -11,7 +11,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous" />
 
-   <!-- gamit css -->
+    <!-- gamit lang tag css para naa tay og bg blink -->
     <style>
         body {
             background-color: #f0f0f0; 
@@ -32,6 +32,11 @@
                 opacity: 0;
             }
         }
+        /* pantanggal sa blink */
+
+        .blink-quote {
+            animation: none; 
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -41,7 +46,7 @@
             <div class="d-flex justify-content-center">
                 <img src="" alt="Waifu Image" id="waifuImage" style="max-width: 100%; max-height: 400px; display: none;">
             </div>
-            <p id="quote" class="display-5 blink" style="font-style: italic"></p>
+            <p id="quote" class="display-5 blink-quote" style="font-style: italic"></p>
             <button class="btn btn-primary my-3" id="get">New Picture</button>
             <button class="btn btn-danger my-3" id="clear">Clear Picture</button>
         </div>
@@ -51,9 +56,10 @@
     </div>
 
     <script>
+      //picture sa anime og text
         const waifuApiEndpoint = 'https://api.waifu.pics/sfw/waifu';
-        const quoteApiEndpoint = 'https://animechan.xyz/api/random'; 
-//gamit ajax get ra lamng :(
+        const quoteApiEndpoint = 'https://animechan.xyz/api/random';
+          //ajax gamit pag fetch wwoohohohooh
         function ajaxGetWaifu() {
             $.ajax({
                 url: waifuApiEndpoint,
@@ -82,6 +88,8 @@
                 }
             });
         }
+
+        // para sa description ni
 
         function fetchQuote() {
             $.ajax({
