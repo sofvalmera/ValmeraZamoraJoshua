@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Random Anime Picture</title>
 
-    <!-- CSS Styles -->
+   
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-    <!-- Bootstrap Styles -->
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous" />
 
-    <!-- Custom Styles -->
     <style>
         body {
             background-color: #f0f0f0; 
@@ -30,7 +29,7 @@
         .blink {
             animation: blinker 1s linear infinite;
         }
-
+        /* para sa blink title */
         @keyframes blinker {
             50% {
                 opacity: 0;
@@ -56,8 +55,8 @@
 
     <script>
         const waifuApiEndpoint = 'https://api.waifu.pics/sfw/waifu';
-        const quoteApiEndpoint = ''; // Add your quote API endpoint here
-
+        const quoteApiEndpoint = ''; 
+//Gamit ajax
         function ajaxGetWaifu() {
             $.ajax({
                 url: waifuApiEndpoint,
