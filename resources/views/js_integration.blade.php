@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Random Anime Picture</title>
 
-  <!-- css ni -->
+    <!-- CSS Styles -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-    <!-- download ta ani -->
+    <!-- Bootstrap Styles -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous" />
 
+    <!-- Custom Styles -->
     <style>
         body {
             background-color: #f0f0f0; 
@@ -30,10 +31,6 @@
             animation: blinker 1s linear infinite;
         }
 
-/* para blinker sa title haha */
-
-
-
         @keyframes blinker {
             50% {
                 opacity: 0;
@@ -48,7 +45,7 @@
             <div class="d-flex justify-content-center">
                 <img src="" alt="Waifu Image" id="waifuImage" style="max-width: 100%; max-height: 400px; display: none;">
             </div>
-            <p id="description" class="display-5 blink" style="font-style: italic"></p>
+            <p id="quote" class="display-5 blink" style="font-style: italic"></p>
             <button class="btn btn-primary my-3" id="get">New Picture</button>
             <button class="btn btn-danger my-3" id="clear">Clear Picture</button>
         </div>
@@ -58,17 +55,17 @@
     </div>
 
     <script>
-        const apiEndpoint = 'https://api.waifu.pics/sfw/waifu';
-        const descriptionApiEndpoint = '';
+        const waifuApiEndpoint = 'https://api.waifu.pics/sfw/waifu';
+        const quoteApiEndpoint = ''; // Add your quote API endpoint here
 
-        function ajaxGet() {
+        function ajaxGetWaifu() {
             $.ajax({
-                url: apiEndpoint,
+                url: waifuApiEndpoint,
                 method: 'GET',
                 dataType: 'json',
                 success: function(response) {
-                    output(response);
-                    fetchDescription();
+                    outputWaifu(response);
+                    fetchQuote();
                 },
                 error: function(error) {
                     console.error(error);
@@ -76,13 +73,13 @@
             });
         }
 
-        function fetchDescription() {
+        function ajaxGetQuote() {
             $.ajax({
-                url: descriptionApiEndpoint,
+                url: quoteApiEndpoint,
                 method: 'GET',
                 dataType: 'json',
                 success: function(response) {
-                    updateDescription(response);
+                    outputQuote(response);
                 },
                 error: function(error) {
                     console.error(error);
@@ -90,10 +87,18 @@
             });
         }
 
-        function updateDescription(response) {
-            const descriptionContainer = document.querySelector('#description');
-           
-            descriptionContainer.innerText = response.description;
+        function fetchQuote() {
+            $.ajax({
+                url: quoteApiEndpoint,
+                method: 'GET',
+                dataType: 'json',
+                success: function(response) {
+                    outputQuote(response);
+                },
+                error: function(error) {
+                    console.error(error);
+                }
+            });
         }
 
         function clearPicture() {
@@ -101,7 +106,7 @@
             waifuImage.style.display = 'none';
         }
 
-        function output(response) {
+        function outputWaifu(response) {
             const container = document.querySelector('#quotes');
             const waifuImage = document.querySelector('#waifuImage');
             
@@ -109,8 +114,14 @@
             waifuImage.style.display = 'block';
         }
 
+        function outputQuote(response) {
+            const quoteContainer = document.querySelector('#quote');
+           
+            quoteContainer.innerText = response.quote;
+        }
+
         $(document).ready(function() {
-            $('#get').on('click', ajaxGet);
+            $('#get').on('click', ajaxGetWaifu);
             $('#clear').on('click', clearPicture);
         });
     </script>
