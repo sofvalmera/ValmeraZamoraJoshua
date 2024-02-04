@@ -111,11 +111,12 @@
         }
 
         function outputWaifu(response) {
-            const container = document.querySelector('#quotes');
-            const waifuImage = document.querySelector('#waifuImage');
-            
-            waifuImage.src = response.url;
-            waifuImage.style.display = 'block';
+    const container = document.querySelector('#quotes');
+    const waifuImage = document.querySelector('#waifuImage');
+
+    waifuImage.src = response.url;
+    waifuImage.style.display = 'block';
+    waifuImage.style.border = '5px solid #333';
         }
 
         function outputQuote(response) {
