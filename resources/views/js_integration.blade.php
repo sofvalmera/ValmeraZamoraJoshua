@@ -104,7 +104,10 @@
 
         function clearPicture() {
             const waifuImage = document.querySelector('#waifuImage');
-            waifuImage.style.display = 'none';
+    const quoteContainer = document.querySelector('#quote');
+    
+    waifuImage.style.display = 'none';
+    quoteContainer.innerText = ''; 
         }
 
         function outputWaifu(response) {
