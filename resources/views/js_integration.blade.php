@@ -56,10 +56,9 @@
     </div>
 
     <script>
-      //picture sa anime og text
         const waifuApiEndpoint = 'https://api.waifu.pics/sfw/waifu';
-        const quoteApiEndpoint = 'https://animechan.xyz/api/random';
-          //ajax gamit pag fetch wwoohohohooh
+        const quoteApiEndpoint = 'https://api.quotable.io/random';
+
         function ajaxGetWaifu() {
             $.ajax({
                 url: waifuApiEndpoint,
@@ -88,8 +87,6 @@
                 }
             });
         }
-
-        // para sa description ni
 
         function fetchQuote() {
             $.ajax({
@@ -121,7 +118,7 @@
         function outputQuote(response) {
             const quoteContainer = document.querySelector('#quote');
            
-            quoteContainer.innerText = response.quote;
+            quoteContainer.innerText = response.content;
         }
 
         $(document).ready(function() {
